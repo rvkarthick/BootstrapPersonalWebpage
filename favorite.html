@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Favorite</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <link href="library/img/favicon.png" rel="icon">
+  <link href="library/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+ 
+  <link href="library/proj/aos/aos.css" rel="stylesheet">
+  <link href="library/proj/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="library/proj/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="library/proj/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="library/proj/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="library/proj/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+ <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+
+ 
+  <link href="library/css/style.css" rel="stylesheet">
+<style>
+    
+    body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 150px;
+  margin-top: 40px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 5em;
+  right: 25px;
+  font-size: 20px;
+  margin-left: 50px;
+  color: aliceblue;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 5px;}
+  .sidenav a {font-size: 20px;}
+}
+/*vechicle*/
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+}
+
+.cards {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card {
+  margin: 100px;
+  position: relative;
+  max-width: 250px;
+  max-height: 350px;
+  box-shadow: 0 40px 60px -6px black;
+}
+
+.card-title {
+  display: block;
+  text-align: center;
+  color: #fff;
+  background-color: #c171be;
+  padding: 1%;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+.card img {
+  width: 100%;
+  height: 98%;
+  object-fit: cover;
+  display: block;
+  position: relative;
+}
+
+.card-desc {
+  display: block;
+  font-size: 1.2rem;
+  position: absolute;
+  height: 0;
+  top: 0;
+  opacity: 0;
+  padding: 18px 8%;
+  background-color: white;
+  overflow-y: scroll;
+  transition: 0.8s ease;
+}
+
+.card:hover .card-desc {
+  opacity: 1;
+  height: 100%;
+}
+
+h1 {
+  font-size: 2.8rem;
+  color: #fff;
+  margin: 40px 0 20px 0;
+  text-align: center;
+}
+
+
+
+</style>
+<style>
+  
+.card {
+  border-radius: 16px;
+  margin: 0 auto;
+  width: 500px;
+  max-width: 100%;
+  min-height: 500px;
+  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
+    0px 5px 8px 0px rgba(0, 0, 0, 0.14),
+    0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  background-size: cover;
+}
+
+.info {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background-color: #fff;
+  transform: translateY(100%)
+    translateY(-88px)
+    translateZ(0);
+  transition: transform 0.5s ease-out;
+}
+
+.info:before {
+  z-index: -1;
+  display: block;
+  position: absolute;
+  content: ' ';
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-image: url(/library/img/don.jpg);
+  filter: blur(0px);
+  background-size: cover;
+  opacity: 0.25;
+  transform: translateY(-100%)
+    translateY(88px)
+    translateZ(0);
+  transition: transform 0.5s ease-out;
+}
+
+.card:hover .info,
+.card:hover .info:before {
+  transform: translateY(0) translateZ(0);
+}
+
+.title {
+  margin: 0;
+  padding: 24px;
+  font-size: 40px;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.description {
+  margin: 0;
+  padding: 0 24px 24px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* General layout and typography stuff */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400");
+
+* {
+  box-sizing: border-box;
+  position: relative;
+  transition: all .3s ease
+}
+</style>
+
+</head>
+
+<body>
+    <header id="header" class="fixed-top">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+    
+          <h1 class="logo me-auto me-lg-0"><a href="index.html">KARTHICK R</a></h1>
+          
+    
+          <nav id="navbar" class="navbar order-last order-lg-0">
+            <ul id="nb">
+                <li><a  href="Home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a  class="active" href="favorite.html">Favorite</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a  href="Feedback.html">Feedback</a></li>
+                
+               
+              </ul>
+       
+            <i class="bi bi-list mobile-nav-toggle"></i>
+          </nav>
+    
+          <div class="header-social-links">
+            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+          </div>
+    
+        </div>
+    
+      </header><br><br><hr><br>
+      <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#food"><i class="bi bi-arrow-right-circle-fill"></i> FOOD</a>
+        <a href="#sports"><i class="bi bi-arrow-right-circle-fill"></i>SPORTS</a>
+        <a href="#transoprt"><i class="bi bi-arrow-right-circle-fill"></i>TRANSPORT</a>
+        <a href="#vehcile"><i class="bi bi-arrow-right-circle-fill"></i>VEHCILE</a>
+        <a href="#video"><i class="bi bi-arrow-right-circle-fill"></i>VIDEO</a>
+        <a href="#audio"><i class="bi bi-arrow-right-circle-fill"></i>AUDIO</a>
+      </div>
+      
+      
+        <button style="font-size:30px;cursor:pointer"  onclick="openNav()">  Open <i class="bi bi-list"></i></button>
+ 
+
+  <main id="main">
+    <div class="container" data-aos="fade-up">
+     <center><h1>Favorite</h1>
+     <p>Favorite is a person or thing that is best liked or treated in a special way.</p></center>
+    <section id="departments" class="departments">    
+        <div class="container">  
+          <div class="section-title"> 
+            <img src="library/img/favna.jpg" >
+          </div><br>
+          <a id="food"></a>
+          </div>
+        </section>
+          <div class="row gy-4">
+            
+            <div class="ride_main">
+              <center><h1 class="ride_text">Fav <span style="color: #f4db31;">Food</span></h1></center>
+          </div>
+            <div class="col-lg-3"><br><br><br>
+              <ul class="nav nav-tabs flex-column">
+                <li class="nav-item">
+                  <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">Breakfast</a>
+                </li><br><br>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Lunch</a>
+                </li><br><br>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Dinner</a>
+                </li>
+                
+              </ul>
+            </div>
+            <div class="col-lg-9">
+        
+              <div class="tab-content">
+                <div class="tab-pane active show" id="tab-1">
+                  <div class="row gy-4">
+                    <div class="col-lg-8 details order-2 order-lg-1"><br><br>
+                      <h4><strong>Breakfast</strong></h3>
+                      <p class="fst-italic">Breakfast is the first meal of the day eaten after waking from the night's sleep, in the morning. The word in English refers to breaking the fasting period of the previous night.There is a strong likelihood for one or more "typical", or "traditional", breakfast menus to exist in most places, but their composition varies widely from place to place, and has varied over time, so that globally a very wide range of preparations and ingredients are now associated with breakfast.</p>
+                     <ul>
+                         <li><b>Ven Pongal</b></li>
+                         <p>Ven Pongal or Khara Pongal recipe is a delish South Indian savory porridge of rice and mung lentils laced with spices, herbs and ghee.</p>
+                         <li><b>Medu Vada</b></li>
+                         <p>Medu Vada are crispy, fluffy, soft and delicious lentil fritters from the South Indian cuisine. If sweet breakfast isn’t your thing, try this recipe for savory spiced donuts made with black gram lentils and aromatic spices. Traditionally paired with Sambar and Coconut Chutney, these make for a comforting, filling and satisfying breakfast or snack.</p>
+                         <li><b>Idiyappam</b></li>
+                         <p>“Idiyappam | String Hopper Recipe | Nool Puttu”. An easy to make and super delicious South Indian steamed rice noodle. Made simply from rice flour, it becomes the perfect vehicle to mop up delicious curry.</p>
+                     </ul>
+                    </div>
+                    <div class="col-lg-4 text-center order-1 order-lg-2"><br><br><br><br><br>
+                      <img src="library/img/breakfast.jpg" alt="" class="img-fluid">
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane" id="tab-2">
+                  <div class="row gy-4">
+                    <div class="col-lg-8 details order-2 order-lg-1"><br><br>
+                        <h4><strong>Lunch</strong></h3>
+                      <p class="fst-italic">Lunch is an important meal for everyone. It provides energy and nutrients to keep the body and brain working efficiently through the afternoon</p>
+                      <ul>
+                        <li><b>Meals</b></li>
+                        <p>Meals occur primarily at homes, restaurants, and cafeterias, but may occur anywhere. Regular meals occur on a daily basis, typically several times a day. Special meals are usually held in conjunction with such occasions as birthdays, weddings, anniversaries, and holidays. A meal is different from a snack in that meals are generally larger, more varied, and more filling than snacks.</p>
+                        <li><b>Briyani</b></li>
+                        <p>Biryani is one of the most popular dishes in South Asia, as well as among the diaspora from the region. Similar dishes are also prepared in other parts of the world such as in Iraq, Thailand, and Malaysia.Biryani is the single most-ordered dish on Indian online food ordering and delivery services.</p>
+                        <li><b>Sambar sadham</b></li>
+                        <P>Sambar Rice, quite popular in Tamilnadu hotels as Sambar Sadam is a delicious concoction of rice, dal and mixed vegetables. If you are wondering how is it different from the Karnataka special Bisibelebath, in this recipe we add everything together in one shot into a pressure cooker, cook everything to a mash and then temper it. There is no need for making a special spice blend or roasting pulses, as we use sambar powder there by saving time & effort. As it made in pressure cooker, it just takes 30mins to make it from scratch.</P>
+                    </ul>
+                    </div>
+                    <div class="col-lg-4 text-center order-1 order-lg-2"><br><br><br><br><br>
+                      <img src="library/img/lunch.jpg" alt="" class="img-fluid">
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane" id="tab-3">
+                  <div class="row gy-4">
+                    <div class="col-lg-8 details order-2 order-lg-1"><br><br>
+                      <h4><strong>Dinner</strong></h3>
+                        <p class="fst-italic">Dinner is defined as the largest meal of the day, often eaten in the evening after you have already had breakfast and lunch. An example of dinner is when you go out to a restaurant at 7:00 PM and eat a meal. noun. 3. The chief meal of the day, eaten in the evening or at midday.</p>
+                        <ul>
+                          <li><b>Chapati</b></li>
+                          <p>Chapatis are made of whole-wheat flour known as atta, mixed into dough with water, oil (optional), salt (optional) in a mixing utensil called a parat, and are cooked on a tava (flat skillet).</p>
+                          <li><b>Dosa</b></li>
+                          <p> Dosa is very similar to a crepe and is a very popular street food in India. Dosa is famous for its simple ingredients, interesting flavors, and even its sweet aroma. I love it for how easy and clean the ingredients are.</p>
+                          <li><b>Sambar sadham</b></li>
+                          <P>Sambar Rice, quite popular in Tamilnadu hotels as Sambar Sadam is a delicious concoction of rice, dal and mixed vegetables. If you are wondering how is it different from the Karnataka special Bisibelebath, in this recipe we add everything together in one shot into a pressure cooker, cook everything to a mash and then temper it. There is no need for making a special spice blend or roasting pulses, as we use sambar powder there by saving time & effort. As it made in pressure cooker, it just takes 30mins to make it from scratch.</P>
+                      </ul>
+                      </div>
+                    <div class="col-lg-4 text-center order-1 order-lg-2"><br><br><br><br><br>
+                      <img src="library/img/dinner.jpg" alt="" class="img-fluid">
+                    </div>
+                  </div>
+                </div>
+               
+              </div>
+            </div>
+          </div>
+  
+        </div>
+
+        
+      
+    
+          </div>
+      </section>
+      <a id="sports"></a>
+      <section>
+        <div class="ride_section layout_padding">
+      <div class="container">
+     
+        
+          <div class="ride_main">
+            <center><h1 class="ride_text">Fav <span style="color: #f4db31;">Sports</span></h1></center>
+        </div>
+          </div>
+      </div><br><br><br><br><br><br>
+      <div class="ride_section_2 layout_padding">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="image_3"><img src="library/img/ms.jpg" style="width: 400px;"></div>
+            </div>
+            <div class="col-sm-8">
+              <h1 class="cabe_text">MS Dhoni</h1>
+              <h3 class="fst-italic">Cricket Player</h3>
+              <p class="long_text">Mahendra Singh Dhoni (born 7 July 1981) is an Indian professional cricketer who was captain of the Indian national cricket team in limited-overs formats from 2007 to 2017 and in Test cricket from 2008 to 2014. He is a right-handed wicket-keeper batsman.He led the team to three ICC trophies including the 2007 ICC World Twenty20, 2011 ICC Cricket World Cup and 2013 ICC Champions Trophy. Under his captaincy, India won the Asia Cup two times, in 2010 and 2016. India also won ICC Test Championship Mace two times in 2010 and 2011 under his leadership. He is considered as one of the greatest Captains and Wicket Keeper-Batsmen of all time.Throughout his 15 year long international career, Dhoni has won several awards and accolades.</p>
+              
+            </div>
+          </div>
+        </div><br><br>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8">
+              <h1 class="secure_text">Cristiano Ronaldo</h1>
+              <h3 class="fst-italic">Football Player</h3>
+              <p class="long_text_2">Cristiano Ronaldo dos Santos Aveiro GOIH ComM (born 5 February 1985) is a Portuguese professional footballer who plays as a forward for Premier League club Manchester United and captains the Portugal national team. Often considered the best player in the world and widely regarded as one of the greatest players of all time, Ronaldo has won five Ballon d'Or awards[note 3] and four European Golden Shoes, the most by a European player. He has won 32 trophies in his career, including seven league titles, five UEFA Champions Leagues, one UEFA European Championship, and one UEFA Nations League. Ronaldo holds the records for most appearances (183), most goals (140), and assists (42) in the Champions League, most goals in the European Championship (14). He is one of the few players to have made over 1,100 professional career appearances, and has scored over 800 official senior career goals for club and country.</p>
+              
+            </div>
+            <div class="col-sm-4">
+              <div class="image_3"><img src="library/img/ronaldo.jpg" style="width: 400px;"></div>
+            </div>
+          </div>
+        </div><br><br>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4">
+              <div class="image_3"><img src="library/img/volleybal.jpg" width="400px"></div>
+            </div>
+            <div class="col-sm-8">
+              <h1 class="cabe_text">Ivan Zaytsev</h1>
+              <h3 class="fst-italic">Volleyball Player</h3>
+              <p class="long_text">Ivan Vyacheslavovich Zaytsev (born 2 October 1988), nicknamed lo Zar ("the Tsar"), is an Italian volleyball player of Russian origin, the captain of Italy men's national volleyball team, a bronze medalist of the Olympic Games London 2012, silver medalist of the European Championship (2011, 2013), bronze medalist of the World League (2013, 2014), Italian Champion (2014) and silver medalist of the Olympic Games Rio 2016.He started his career as a setter in 2004, but later moved to the outside hitter role. He played in Serie A1 at 16 year. His first club was RPA-LuigiBacchi.it Perugia, where he played for two seasons. After this, he moved to M. Roma Volley. In the season 2007/2008, he played for Andreoli Latina. Then he came back to M. Roma Volley and played there until 2012. In 2012, Zaytsev signed with Lube Banca Macerata. With this team, he won the Italian SuperCup in 2012 and the Italian Championship 2013/2014.[1][2] On May 9, 2014 his departure from Lube was announced.[3] Then for two seasons, he was a player of Russian club VC Dynamo Moscow.</p>
+              
+            </div>
+          </div>
+        </div><br><br>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8">
+              <h1 class="secure_text">Saina Nehwal</h1>
+              <h3 class="fst-italic"> Badminton Player</h3>
+              <p class="long_text_2">Saina Nehwal (born 17 March 1990) is an Indian professional badminton player. A former world no. 1, she has won 24 international titles, which includes ten Superseries titles. Although she reached the world's 2nd in 2009, it was only in 2015 that she was able to attain the world no. 1 ranking, thereby becoming the only female player from India and overall the second Indian player  after Prakash Padukone to achieve this feat.She has represented India three times in the Olympics, winning a bronze medal in her second appearance at the London 2012.</p>
+             
+            </div>
+            <div class="col-sm-4">
+              <div class="image_3"><img src="library/img/sainaa.jpg" width="400px"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+
+    <a id="transoprt"></a>
+    <section>
+      <center><h1 class="our_text">Fav <span style="color: #f4db31;">Transports</span></h1></center><br><br><br>
+     
+      <div class="taxis_section layout_padding">
+        <div class="container">
+          <div class="taxis_section_2">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="taxi_main">
+                  
+                  <h2 class="carol_text">BUS</h2>
+                  <p class="fst-italic">Is less stressful. Rather than driving in traffic, you can use the time that you spend moving from one place to another by bus to do other things, such as reading, advancing some work, taking a nap, listening to music. Travelling by bus is cheaper than owning and operating a car.</p>
+                  <div class="images_2"><a href="#"><img src="library/img/bus.jpg" width="400px"></a></div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="taxi_main">
+                 
+                  <h2 class="carol_text">Bike</h2>
+                  <p class="fst-italic">It's the bonding hormone, increasing feelings of empathy and connectedness.The boost you get mirrors the benefits of meditation. Alpha brainwaves increase, leaving you feeling serene.the more of them you release. Exercise really can become like a drug.</p>
+                  <div class="images_2"><img src="library/img/bike.jpg" width="400px" height="225px"></a></div>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="taxi_main">
+                  
+                  <h2 class="carol_text">Train</h2>
+                  <p class="fst-italic">In a train journey, one can spend time reading something, listening to music, watching videos, sleeping/resting comfortably, etc. To sum it up, train journeys are truly one of a kind. The train journey offers uniqueness like no other journey. Most noteworthy, the charm of such a journey is unmatchable.</p>
+                  <div class="images_2"><img src="library/img/train.jpg" width="400px"  height="225px"></a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <a id="vehcile"></a>
+ 
+    <section>
+      <center><h1 class="ride_text">Fav <span style="color: #f4db31;">vehicle</span></h1></center><br><br>
+
+
+      <div class="cards">
+    
+  <div class="card">
+    <h2 class="card-title">Bikes</h2>
+    <img src="library/img/rx100.jpg" alt="">
+    <p class="card-desc">Just like the Royal Enfield motorcycles, the Yamaha RX 100 was once also considered a symbol of masculinity. The two-stroke motorcycle was fast compared to its rivals and had a unique exhaust note. The bike somehow became a favourite amongst the young riders and was kind of wild and rugged in nature.</p>
+  </div>
+  <div class="card">
+    <h2 class="card-title" >Car</h2>
+    <img src="library/img/bmw.jpg" alt="" >
+    <p class="card-desc">In trying to identify what makes the BMW brand so popular, one word keeps reappearing – performance. At the end of the day, BMW is synonymous with power and performance, making it the sporty luxury brand that's fun to drive. Some even say that only BMW can offer sheer driving pleasure.</p>
+  </div>
+</div>
+    </section>
+<a id="video"></a>
+    <section>
+      <center><h1 class="ride_text">Fav <span style="color: #f4db31;">video</span></h1></center>
+      <div class="cards" id="video">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <div class = 'cover'> 
+              <video controls class = 'video' width = '400' height="300px" style="margin: 20%;">
+                              <source src="library/video/30-Second-Tamil-Love-WhatsApp-Status-Video-Song-2021-1.mp4" type="video/mp4" />
+                              <source src="library/video/Tamil-Love-Whatsapp-Status-Video-Song-Download-2021-1.mp4" />
+                              <img src=" fall-back image" alt="">
+                       </video> 
+            </div>
+          </div>
+          <div class="col-sm">
+            <div class = 'cover'> 
+              <p></p>
+              <video controls class = 'video' width = '400' height="300px" style="margin: 20%;">
+                              <source src="library/video/💕Cute-Caring-Girls-Love💕Thozhiya-En-Kadhaliya💕-💕New-Whatsapp-Status-Video💕-💜Satheesh-Status💜-1.mp4" type="video/mp4" />
+                              <source src="library/video/💕Cute-Caring-Girls-Love💕Thozhiya-En-Kadhaliya💕-💕New-Whatsapp-Status-Video💕-💜Satheesh-Status💜-1.mp4" />
+                              <img src=" fall-back image" alt="">
+                       </video> 
+            </div>
+            
+            
+          </div>
+          
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <a id="audio"></a>
+    <section>
+      
+      <center><h1 class="ride_text">Fav <span style="color: #f4db31;">Audio</span></h1></center>
+
+      <div class='card'>
+        <div class='info'>
+          <h1 class='title'>DON</h1>
+          <ul style="color: rgb(9, 9, 9);">
+            <li><strong>Starring:</strong> Sivakarthikeyan, Priyanka Mohan, SJ Suryah, Samuthirakani, Soori</li>
+            <li><strong>Music:</strong> Anirudh Ravichander</li>
+            <li><strong>Director:</strong> Cibi Chakaravarthi</li>
+            <li><strong>Lyrics:</strong> Rokesh, Vignesh Shivan, Sivakarthikeyan</li>
+            <li><strong>Year:</strong> 2022</li>
+            <li><strong>Language:</strong> Tamil</li>
+
+          </ul>
+          <center><audio controls  playsinline  loop>
+            <source src="library/music/Jalabulajangu-Masstamilan.in.mp3" type="audio/mpeg">
+            </audio>
+            <audio controls  playsinline loop>
+              <source src="library/music/Bae-Masstamilan.in.mp3" type="audio/mpeg">
+              </audio>
+              <audio controls  playsinline loop>
+                <source src="library/music/Private-Party-MassTamilan.in.mp3" type="audio/mpeg">
+                </audio></center>
+        </div>
+      </div>
+
+    </section>
+    
+  </main>
+
+
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>!!!</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        
+        Designed by <strong>KARTHICK R</strong>
+      </div>
+    </div>
+  </footer>
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <script src="library/proj/purecounter/purecounter.js"></script>
+  <script src="library/proj/aos/aos.js"></script>
+  <script src="library/proj/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="library/proj/glightbox/js/glightbox.min.js"></script>
+  <script src="library/proj/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="library/proj/swiper/swiper-bundle.min.js"></script>
+  <script src="library/proj/waypoints/noframework.waypoints.js"></script>
+  <script src="library/proj/php-email-form/validate.js"></script>
+
+  <script src="library/js/main.js"></script>
+
+  <script>
+    $('.ui.dropdown').dropdown({
+        allowCategorySelection:true,
+    })
+</script>
+
+
+<script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+    document.body.style.backgroundColor = "white";
+  }
+  </script>
+
+</body>
+
+
+</html>
